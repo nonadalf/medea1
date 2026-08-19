@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بحث - منصة مواهب المدية</title>
+    <!-- خط Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- مكتبة الأيقونات FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="search.css" />
+    <!-- تنسيقات خاصة بصفحة البحث فقط -->
+  </head>
+  <body>
+    <a href="../index.html" style="color: aliceblue">الغاء</a>
+    <div class="search-page-container">
+      <!-- 1. محرك البحث مع زر الإلغاء -->
+      <div class="search-bar-wrapper">
+        <button
+          class="btn-back"
+          onclick="window.location.href = 'index.html'"
+          title="العودة للصفحة الرئيسية"
+        >
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="ابحث عن موهبة، فنان، أو مجال إبداعي..."
+          autofocus
+        />
+        <i
+          class="fa-solid fa-magnifying-glass"
+          style="color: #64748b; margin-left: 1rem"
+        ></i>
+      </div>
+      <!-- 2. شريط الفئات الملونة الأفقي -->
+      <div class="categories-strip">
+        <a href="#" class="cat-pill cp-purple"
+          ><i class="fa-solid fa-palette"></i><span>فنون بصرية</span></a
+        >
+        <a href="#" class="cat-pill cp-blue"
+          ><i class="fa-solid fa-music"></i><span>موسيقى</span></a
+        >
+        <a href="#" class="cat-pill cp-green"
+          ><i class="fa-solid fa-pen-nib"></i><span>كتابة</span></a
+        >
+        <a href="#" class="cat-pill cp-orange"
+          ><i class="fa-solid fa-laptop-code"></i><span>تقنية</span></a
+        >
+        <a href="#" class="cat-pill cp-red"
+          ><i class="fa-solid fa-video"></i><span>سينما</span></a
+        >
+        <a href="#" class="cat-pill cp-teal"
+          ><i class="fa-solid fa-microphone-lines"></i><span>بودكاست</span></a
+        >
+      </div>
+
+      <!-- 3. زر الفلاتر ومكان عرض النتائج -->
+      <div class="results-toolbar">
+        <button class="btn-filter">
+          <i class="fa-solid fa-sliders"></i> تصفية النتائج
+        </button>
+        <span class="results-count">عرض 12 موهبة</span>
+      </div>
+
+      <!-- 4. شبكة عرض المواهب -->
+      <div class="talents-grid">
+        <!-- بطاقة موهبة 1 -->
+        <div class="talent-card">
+          <div class="talent-header">
+            <div class="talent-avatar">أ</div>
+            <div class="talent-info">
+              <h3>أمينة بلحاج</h3>
+              <span>مصورة فوتوغرافية</span>
+            </div>
+          </div>
+          <p class="talent-desc">
+            متخصصة في التصوير المعماري والطبيعة، أبحث عن فرص للتعاون مع مؤسسات
+            ثقافية.
+          </p>
+          <div class="talent-tags">
+            <span class="tag">تصوير</span>
+            <span class="tag">فن بصري</span>
+          </div>
+        </div>
+
+        <!-- بطاقة موهبة 2 -->
+        <div class="talent-card">
+          <div class="talent-header">
+            <div class="talent-avatar">أ</div>
+            <div class="talent-info">
+              <h3>أمينة بلحاج</h3>
+              <span>مصورة فوتوغرافية</span>
+            </div>
+          </div>
+          <p class="talent-desc">
+            متخصصة في التصوير المعماري والطبيعة، أبحث عن فرص للتعاون مع مؤسسات
+            ثقافية.
+          </p>
+          <div class="talent-tags">
+            <span class="tag">تصوير</span>
+            <span class="tag">فن بصري</span>
+          </div>
+        </div>
+
+        <!-- بطاقة موهبة 3 -->
+        <div class="talent-card">
+          <div class="talent-header">
+            <div class="talent-avatar">أ</div>
+            <div class="talent-info">
+              <h3>أمينة بلحاج</h3>
+              <span>مصورة فوتوغرافية</span>
+            </div>
+          </div>
+          <p class="talent-desc">
+            متخصصة في التصوير المعماري والطبيعة، أبحث عن فرص للتعاون مع مؤسسات
+            ثقافية.
+          </p>
+          <div class="talent-tags">
+            <span class="tag">تصوير</span>
+            <span class="tag">فن بصري</span>
+          </div>
+        </div>
+
+        <!-- بطاقة موهبة 4 -->
+        <div class="talent-card">
+          <div class="talent-header">
+            <div class="talent-avatar">أ</div>
+            <div class="talent-info">
+              <h3>أمينة بلحاج</h3>
+              <span>مصورة فوتوغرافية</span>
+            </div>
+          </div>
+          <p class="talent-desc">
+            متخصصة في التصوير المعماري والطبيعة، أبحث عن فرص للتعاون مع مؤسسات
+            ثقافية.
+          </p>
+          <div class="talent-tags">
+            <span class="tag">تصوير</span>
+            <span class="tag">فن بصري</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

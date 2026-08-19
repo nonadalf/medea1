@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب - منصة مواهب المدية</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- الهيدر (كما هو في الأصل) -->
+    <header class="formHeader">
+        <div class="logo-icon">#</div>
+        <h1>سجل الان و دعنا نتعرف بك</h1>
+        
+        <!-- شريط التقدم -->
+        <div class="progress">
+            <div class="subProgress" style="width: 25%;"></div>
+        </div>
+        <div class="stepIndicator">
+            <span class="stepMeta">الخطوة <span id="currentStepNum">1</span> من 4</span>
+            <span class="stepLabel" id="stepTitle">أخبرنا عنك</span>
+        </div>
+    </header>
+
+    <main>
+        <form id="registerForm">
+            
+            <!-- الخطوة 1: البريد الإلكتروني وكلمة المرور (كما هي) -->
+            <div class="step active" data-step="1">
+                <div class="formBody">
+                    <div class="formGroup">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="example@domain.com" required>
+                        <span class="error-msg">البريد الإلكتروني غير صحيح</span>
+                    </div>
+
+                    <div class="divider">أو</div>
+
+                    <div class="author">
+                        <a href="#" class="socialLogin"><i class="fa-brands fa-google"></i> <span>التسجيل بواسطة Google</span></a>
+                        <a href="#" class="socialLogin"><i class="fa-brands fa-apple"></i> <span>التسجيل بواسطة Apple</span></a>
+                    </div>
+
+                    <div class="doyouhaveacc">
+                        <span>لديك حساب بالفعل؟</span>
+                        <a href="../index.html">عد الى الصفحة الراسية</a>
+                    </div>
+                </div>
+                <button type="button" class="nextBtn">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+
+            <!-- الخطوة 2: إنشاء كلمة المرور (كما هي) -->
+            <div class="step" data-step="2">
+                <div class="formBody">
+                    <div class="formGroup">
+                        <label for="password">إنشاء كلمة المرور</label>
+                        <div class="passwordWrapper">
+                            <input type="password" id="password" placeholder="**********" required>
+                            <button type="button" class="togglePassword" id="togglePassword">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="PasswordCalibrator">
+                            <h2>يجب أن تحتوي كلمة المرور على:</h2>
+                            <div><input type="checkbox" id="rule-letter" disabled> <span>حرف واحد على الأقل</span></div>
+                            <div><input type="checkbox" id="rule-number" disabled> <span>رقم واحد على الأقل</span></div>
+                            <div><input type="checkbox" id="rule-length" disabled> <span>10 أحرف على الأقل</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <button type="button" class="prevBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="nextBtn" style="width: auto; padding: 0 2em;">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <!-- الخطوة 3: المعلومات الشخصية (معدلة حسب الطلب) -->
+            <div class="step" data-step="3">
+                <div class="formBody">
+                    <div class="formGroup">
+                        <label for="name">اسمك الكامل</label>
+                        <input type="text" id="name" placeholder="سيظهر هذا الاسم على صفحة ملفك الشخصي" required>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>تاريخ الميلاد</label>
+                        <div class="bornDate">
+                            <select id="day">
+                                <option value="">اليوم</option>
+                                <script>for(let i=1;i<=31;i++) document.write(`<option value="${i}">${i}</option>`)</script>
+                            </select>
+                            <select id="months">
+                                <option value="">الشهر</option>
+                                <option value="1">يناير</option><option value="2">فبراير</option><option value="3">مارس</option>
+                                <option value="4">أبريل</option><option value="5">مايو</option><option value="6">يونيو</option>
+                                <option value="7">يوليو</option><option value="8">أغسطس</option><option value="9">سبتمبر</option>
+                                <option value="10">أكتوبر</option><option value="11">نوفمبر</option><option value="12">ديسمبر</option>
+                            </select>
+                            <select id="year">
+                                <option value="">السنة</option>
+                                <script>let y=new Date().getFullYear(); for(let i=y;i>=y-100;i--) document.write(`<option value="${i}">${i}</option>`)</script>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>الجنس</label>
+                        <div class="genderRdio">
+                            <div><input type="radio" name="gender" value="male" class="single-choice"> <span>ذكر</span></div>
+                            <div><input type="radio" name="gender" value="female" class="single-choice"> <span>أنثى</span></div>
+                            <div><input type="radio" name="gender" value="other" class="single-choice"> <span>أفضل عدم الإفصاح</span></div>
+                        </div>
+                    </div>
+
+                    <!-- [تعديل] البلدية ورقم الهاتف إجباريان -->
+                    <div class="formGroup">
+                        <label for="municipality">البلدية (داخل مدينة المدية)</label>
+                        <input type="text" id="municipality" placeholder="مثال: المدية، البرواقية..." required>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" placeholder="05XX XX XX XX" required>
+                    </div>
+
+                    <!-- [تعديل] الصورة اختيارية -->
+                    <div class="formGroup">
+                        <label for="profilePic">الصورة الشخصية <small style="color:#64748b">(اختياري)</small></label>
+                        <input type="file" id="profilePic" accept="image/*" style="padding: 0.5em;">
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="socialLinks">روابط منصاتك الاجتماعية <small style="color:#64748b">(اختياري)</small></label>
+                        <input type="url" id="socialLinks" placeholder="https://instagram.com/username">
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <button type="button" class="prevBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="nextBtn" style="width: auto; padding: 0 2em;">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <!-- [جديد] الخطوة 4: أخبرنا عن موهبتك -->
+            <div class="step" data-step="4">
+                <div class="formBody">
+                    <div class="formGroup">
+                        <label for="talentName">اسم الموهبة / اللقب الفني</label>
+                        <input type="text" id="talentName" placeholder="مثال: رسام المدية، صوت الذهب..." required>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="talentCategory">الفئة الإبداعية</label>
+                        <select id="talentCategory" required>
+                            <option value="">اختر الفئة...</option>
+                            <option value="visual_arts">الفنون البصرية</option>
+                            <option value="music">الموسيقى والأداء</option>
+                            <option value="writing">الكتابة والإبداع</option>
+                            <option value="tech">التكنولوجيا</option>
+                            <option value="cinema">الإنتاج السينمائي</option>
+                            <option value="podcast">البودكاست والصوتيات</option>
+                        </select>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="talentDesc">وصف بسيط عن موهبتك</label>
+                        <textarea id="talentDesc" rows="4" placeholder="اكتب وصفاً مختصراً يظهر في ملفك الشخصي لاحقاً..." style="resize: vertical; min-height: 100px;" required></textarea>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <button type="button" class="prevBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="nextBtn" style="width: auto; padding: 0 2em;">التالي <i class="fa-solid fa-arrow-left"></i></button>
+                </div>
+            </div>
+
+            <!-- الخطوة 5 (الأخيرة): مراجعة السياسة (كما هي) -->
+            <div class="step" data-step="5">
+                <div class="formBody">
+                    <h2 style="margin-bottom: 1rem;">أوشكت على الانتهاء!</h2>
+                    
+                    <div class="policyBox">
+                        <input type="checkbox" id="noMarketing" class="single-choice">
+                        <label for="noMarketing">لا أرغب في تلقي رسائل تسويقية من المنصة</label>
+                    </div>
+
+                    <div class="policyBox">
+                        <input type="checkbox" id="shareData" class="single-choice">
+                        <label for="shareData">أسمح بمشاركة بيانات تسجيلي ومزودي المحتوى لأغراض تسويقية.</label>
+                    </div>
+
+                    <p class="hint">
+                        تقدم المنصة خدمة مخصصة.<br>
+                        بالنقر على زر "تسجيل"، فإنك توافق على شروط الخدمة.<br>
+                        يرجى قراءة كيفية معالجة بياناتك الشخصية في سياسة الخصوصية.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                    <button type="button" class="prevBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="submit" class="nextBtn" style="width: auto; padding: 0 2em;">تسجيل <i class="fa-solid fa-check"></i></button>
+                </div>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>هذا الموقع محمي بواسطة reCAPTCHA وتطبق سياسة الخصوصية وشروط الخدمة من Google</p>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>

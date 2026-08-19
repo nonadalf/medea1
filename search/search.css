@@ -1,0 +1,236 @@
+ /* خلفية الصفحة */
+        body { background-color: rgb(24, 29, 37); }
+        
+        /* حاوية البحث الرئيسية */
+        .search-page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* شريط البحث العلوي */
+        .search-bar-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 0.5rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar-wrapper:focus-within {
+            border-color: #00f5a0;
+            box-shadow: 0 0 0 2px rgba(0, 245, 160, 0.1);
+        }
+
+        .btn-back {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: "Cairo", sans-serif;
+            font-size: 1.1rem;
+            outline: none;
+            padding: 0 1rem;
+        }
+
+        .search-input::placeholder { color: #64748b; }
+
+        /* شريط الفئات الملون */
+        .categories-strip {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: #00f5a0 transparent;
+        }
+
+        .categories-strip::-webkit-scrollbar { height: 6px; }
+        .categories-strip::-webkit-scrollbar-thumb { background: #00f5a0; border-radius: 10px; }
+
+        .cat-pill {
+            min-width: 140px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* .cat-pill:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        } */
+
+        .cat-pill i {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .cat-pill span {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* ألوان الفئات (نفس ألوان الصفحة الرئيسية) */
+        .cp-purple { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+        .cp-blue   { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+        .cp-green  { background: linear-gradient(135deg, #11998e, #38ef7d); }
+        .cp-orange { background: linear-gradient(135deg, #ff9966, #ff5e62); }
+        .cp-red    { background: linear-gradient(135deg, #eb3349, #f45c43); }
+        .cp-teal   { background: linear-gradient(135deg, #00b09b, #96c93d); }
+
+        /* منطقة الأدوات والنتائج */
+        .results-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+
+        .btn-filter {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: "Cairo", sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-filter:hover {
+            border-color: #00f5a0;
+            color: #00f5a0;
+        }
+
+        .results-count {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* شبكة عرض المواهب */
+        .talents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .talent-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .talent-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 245, 160, 0.4);
+        }
+
+        .talent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .talent-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #00f5a0, #00d9f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: rgb(24, 29, 37);
+            font-size: 1.2rem;
+        }
+
+        .talent-info h3 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .talent-info span {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .talent-desc {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .talent-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            background-color: rgba(0, 245, 160, 0.1);
+            color: #00f5a0;
+            border: 1px solid rgba(0, 245, 160, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .search-page-container { padding: 2rem 1rem; }
+            .talents-grid { grid-template-columns: 1fr; }
+        }
